@@ -5,7 +5,7 @@ const cypressConfigResolverByFile = (filename) => {
   const pathToConfigFile = path.resolve(__dirname, `${filename}.json`);
   return fs.readJsonSync(pathToConfigFile);
 };
-const cypressConfigResolver = () => {
+const cypressConfigResolver = () =>
   cypressConfigResolverByFile(process.env.CYPRESS_ENV || 'localhost');
-  module.exports.cypressConfigResolver = cypressConfigResolver;
-};
+
+module.exports.cypressConfigResolver = cypressConfigResolver;

@@ -1,9 +1,14 @@
 {
-  "baseUrl": "https://www.google.es",
-  "ignoreTestFiles": ["*.js", "*.md"],
+  "baseUrl": "https://johnlewis.com",
+  "ignoreTestFiles": [
+    "*.js",
+    "*.md"
+  ],
+  "$schema": "https://on.cypress.io/cypress.schema.json",
   "reporter": "junit",
   "reporterOptions": {
     "mochaFile": "test-results/test-output-[hash].xml"
   },
+  "defaultCommandTimeout": 10000,
   "chromeWebSecurity": false
 }
