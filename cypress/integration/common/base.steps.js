@@ -18,8 +18,8 @@ Given(/^User is on the home page$/, () => {
 
 //Validates whether the cookies are stored and welcome banner is displayed
 Given(/^User accepts the cookie banner$/, () => {
-  LandingPage.acceptCookieBanner();
-  cy.getCookies().should('have.length', 1)
+  LandingPage.acceptCookieBanner()
+  cy.getCookies().should('exist')
   return LandingPage.logo().invoke('attr', 'alt').should('eq', 'John Lewis & Partners Home')
 })
 
