@@ -23,3 +23,9 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+Cypress.Commands.overwrite("visit", (orig, url, options) => {
+    orig(url, options)
+    cy.get('#content-root-content-renderer-homepage')
+        .invoke('attr', 'data-aem-kit-hydrated')
+        .should('eq', 'true')
+})
